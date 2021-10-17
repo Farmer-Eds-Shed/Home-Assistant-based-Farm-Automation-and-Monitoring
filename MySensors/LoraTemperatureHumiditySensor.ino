@@ -19,7 +19,7 @@
  *******************************
  *
  */
-
+//Sketch for DH11 Sensor
 //LoRa-Radio-Node-v1.0 (Uses Default MySensors pin config)
 #define MY_DEBUG
 #define MY_RADIO_RFM95
