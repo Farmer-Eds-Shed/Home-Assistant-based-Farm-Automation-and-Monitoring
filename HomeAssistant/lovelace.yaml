@@ -1,0 +1,119 @@
+title: Farm
+views:
+  - icon: ''
+    path: farm
+    title: Farm Yard
+    badges: []
+    cards:
+      - entity: switch.roller_door
+        hold_action:
+          action: more-info
+        icon: mdi:garage-variant
+        name: Roller Door
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      - cards:
+          - cards:
+              - entity: switch.relay_1
+                icon: mdi:ceiling-light
+                name: Shed Lights Front Row
+                type: custom:button-card
+                state:
+                  - value: unavailable
+                    styles:
+                      card:
+                        - filter: opacity(40%)
+                      icon:
+                        - filter: invert(70%)
+                      name:
+                        - filter: invert(70%)
+                      state:
+                        - filter: invert(70%)
+              - entity: switch.relay_2
+                icon: mdi:ceiling-light
+                name: Shed Lights Back Row
+                type: custom:button-card
+                state:
+                  - value: unavailable
+                    styles:
+                      card:
+                        - filter: opacity(40%)
+                      icon:
+                        - filter: invert(70%)
+                      name:
+                        - filter: invert(70%)
+                      state:
+                        - filter: invert(70%)
+            type: horizontal-stack
+          - cards:
+              - entity: switch.relay_3
+                icon: mdi:outdoor-lamp
+                name: Yard Lights
+                type: custom:button-card
+                state:
+                  - value: unavailable
+                    styles:
+                      card:
+                        - filter: opacity(40%)
+                      icon:
+                        - filter: invert(70%)
+                      name:
+                        - filter: invert(70%)
+                      state:
+                        - filter: invert(70%)
+              - entity: switch.relay_4
+                icon: mdi:flash
+                name: Electric Fence
+                type: custom:button-card
+                state:
+                  - value: unavailable
+                    styles:
+                      card:
+                        - filter: opacity(40%)
+                      icon:
+                        - filter: invert(70%)
+                      name:
+                        - filter: invert(70%)
+                      state:
+                        - filter: invert(70%)
+            type: horizontal-stack
+        type: vertical-stack
+      - type: entities
+        entities:
+          - entity: automation.electric_fence_watch_guard
+          - entity: input_number.fence_timer
+            name: Fence timer minuets
+        state_color: true
+        title: 'Electric Fence Auto on  '
+      - type: entities
+        entities:
+          - entity: automation.auto_lights_off
+          - entity: input_number.shed_light_timer
+            name: Light timer minuets
+        state_color: true
+        title: Shed Lights Auto Off
+  - title: Water Monitoring
+    path: ''
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.water_level_moes
+        min: 0
+        max: 100
+      - type: history-graph
+        entities:
+          - entity: sensor.water_level_moes
+        refresh_interval: 0
+        hours_to_show: 150
+      - type: gauge
+        entity: sensor.water_level_gibneys
+        min: 0
+        max: 100
+      - type: history-graph
+        entities:
+          - entity: sensor.water_level_gibneys
+        refresh_interval: 0
+        hours_to_show: 150
