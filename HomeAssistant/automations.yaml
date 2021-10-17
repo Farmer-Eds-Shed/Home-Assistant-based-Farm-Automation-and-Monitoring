@@ -1,0 +1,28 @@
+- id: '1612767885314'
+  alias: Electric Fence Watch guard
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.relay_4
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: '{{ states(''input_number.fence_timer'')|int }}'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.relay_4
+- id: '1612809026301'
+  alias: Auto shed Lights Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.relay_1, switch.relay_2, switch.relay_3
+    from: 'off'
+    to: 'on'
+    for:
+      minutes: '{{ states(''input_number.shed_light_timer'')|int }}'
+  action:
+  - service: switch.turn_off
+    data_template:
+      entity_id: '{{ trigger.entity_id }}'
