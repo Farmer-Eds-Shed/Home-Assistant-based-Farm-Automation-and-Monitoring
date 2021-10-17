@@ -1,4 +1,4 @@
-# Radio Settings for all LoRa Nodes used in this project
+# Radio Settings for LoRa Nodes used in this project
 
 //Heltec ESP32 Lora V2<br />
 #define MY_RADIO_RFM95<br />
