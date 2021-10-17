@@ -1,3 +1,4 @@
+//Timmer input Setup
 input_number:
   fence_timer:
     name: Fence Timer
@@ -16,7 +17,7 @@ input_number:
     mode: box
     icon: mdi:timer-sand
   
-
+//Sensor Templates for Liquid Level Sensors
 sensor:
   - platform: template  
     sensors:
