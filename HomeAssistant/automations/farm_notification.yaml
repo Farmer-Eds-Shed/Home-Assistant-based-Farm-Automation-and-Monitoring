@@ -1,0 +1,52 @@
+#Farm Notifications
+
+#Water Level Moes
+- id: 'farm notifications 1'
+  alias: Low Water Moes
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.water_level_moes
+    below: '35'
+  condition: []
+  action:
+  - device_id: !secret eds_phone
+    domain: mobile_app
+    type: notify
+    title: ''
+    message: Moes Water Level Low
+  mode: single
+
+#Water Level Gibneys
+- id: 'farm notifications 2'
+  alias: Low Water Gibneys
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.water_level_gibneys
+    below: '55'
+  condition: []
+  action:
+  - device_id: !secret eds_phone
+    domain: mobile_app
+    type: notify
+    title: ''
+    message: Gibneys Water Level Low
+  mode: single
+
+#Frost Warning
+- id: 'farm notifications 3'
+  alias: Frost Warning
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.openweather_temp_night_today
+    below: '0'
+  condition: []
+  action:
+  - device_id: !secret eds_phone
+    domain: mobile_app
+    type: notify
+    title: ''
+    message: Warning! Frost Tonight
+  mode: single

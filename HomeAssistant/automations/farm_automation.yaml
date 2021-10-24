@@ -1,9 +1,12 @@
-- id: '1612767885314'
+#Farm Automations
+
+#Electric Fence Watchgaurd, Turns back on fence after set time.
+- id: 'farm 1'
   alias: Electric Fence Watch guard
   description: ''
   trigger:
   - platform: state
-    entity_id: switch.relay_4
+    entity_id: switch.sonoff_10004c01ba_4
     from: 'on'
     to: 'off'
     for:
@@ -11,13 +14,15 @@
   action:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.relay_4
-- id: '1612809026301'
+    entity_id: switch.sonoff_10004c01ba_4
+
+#Switches off shed lights after set time.
+- id: 'farm 2'
   alias: Auto shed Lights Off
   description: ''
   trigger:
   - platform: state
-    entity_id: switch.relay_1, switch.relay_2, switch.relay_3
+    entity_id: switch.sonoff_10004c01ba_1, switch.sonoff_10004c01ba_2, switch.sonoff_10004c01ba_3
     from: 'off'
     to: 'on'
     for:
