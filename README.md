@@ -16,7 +16,7 @@ Humidity Sensors <br />
 Electric Fence Monitors <br />
 CCTV integration, Security/Calving Cameras <br />
 
-# Planed: <br />
+# Planned: <br />
 EID Weighing Scales <br />
 Solar Battery Monitor <br />
 Livestock GPS Monitor <br />
